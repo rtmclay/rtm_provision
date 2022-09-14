@@ -1,4 +1,5 @@
 - name: Configure click_to_focus
+  become: yes
   become_user: mclay
   xfconf:
     channel: xfwm4
@@ -8,6 +9,7 @@
     
     
 - name: Configure Numix theme
+  become: yes
   become_user: mclay
   xfconf:
     channel: xfwm4
@@ -16,6 +18,7 @@
     value: 'Numix'
     
 - name: Set workspace count
+  become: yes
   become_user: mclay
   xfconf:
     channel: xfwm4
@@ -25,6 +28,7 @@
 
 
 - name: Configure Remove icons from desktop
+  become: yes
   become_user: mclay
   xfconf:
     channel: xfce4-desktop
