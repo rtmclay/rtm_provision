@@ -1,0 +1,16 @@
+- name: Configure click_to_focus
+  xfconf:
+    channel: xfwm4
+    property: /general/click_to_focus
+    value_type: 'bool'
+    value: 'false'
+    
+    
+- name: Configure Numix theme
+  xfconf:
+    channel: xfwm4
+    property: /general/theme
+    value_type: 'string'
+    value: 'Numix'
+    
+    
