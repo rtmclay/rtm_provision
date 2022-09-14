@@ -3,3 +3,20 @@
     name:
       - htop
       - tmux
+      - cmake
+      - enscript
+      - evince
+      - emacs
+      - m4
+      - make
+      - meld
+      - mysql-client
+      - mysql-common
+      - mysql-server
+      - stow
+      - tcl
+      - tcl-dev
+      - tcl-expect
+      - tcsh
+      - zsh
+      - zsh-common
