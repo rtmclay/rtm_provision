@@ -1,22 +1,32 @@
 - name: Install packages
   apt:
     name:
-      - htop
-      - tmux
       - cmake
+      - emacs
       - enscript
       - evince
-      - emacs
+      - expect
+      - flex
+      - g++
+      - gawk
+      - gdb
+      - gfortran
+      - htop
       - m4
       - make
       - meld
       - mysql-client
       - mysql-common
       - mysql-server
+      - ncurses-base
+      - ncurses-bin
+      - ncurses-term
       - stow
       - tcl
       - tcl-dev
       - tcl-expect
       - tcsh
+      - tmux
+      - tree
       - zsh
       - zsh-common
