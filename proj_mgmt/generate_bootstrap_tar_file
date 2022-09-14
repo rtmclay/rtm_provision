@@ -1,6 +1,6 @@
 #!/bin/bash
 # -*- shell-script -*-
-TMP_DIR=$HOME/w/ansible/proj_mgmt
+TMP_DIR=$HOME/w/rtm_provision/proj_mgmt
 
 rm -rf $TMP_DIR/pkg
 mkdir -p $TMP_DIR/pkg/ssh/{mclay,root}
