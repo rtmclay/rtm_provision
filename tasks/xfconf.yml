@@ -19,6 +19,7 @@
     property: /general/workspace_names
     value_type: string
     value: ['1', '2', '3', '4']
+    force_array: true
 
 
 - name: Configure Remove icons from desktop
