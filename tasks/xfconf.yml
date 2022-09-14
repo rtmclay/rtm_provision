@@ -13,13 +13,14 @@
     value_type: 'string'
     value: 'Numix'
     
-- name: Configure 5 workspaces
+- name: Set workspace names (4)
   xfconf:
     channel: xfwm4
-    property: /general/workspace_count
-    value_type: 'int'
-    value: '5'
-    
+    property: /general/workspace_names
+    value_type: string
+    value: ['1', '2', '3', '4']
+
+
 - name: Configure Remove icons from desktop
   xfconf:
     channel: xfce4-desktop
