@@ -12,5 +12,4 @@
     - include: tasks/packages.yml
 
   tasks:
-    become_user: mclay
     - include: tasks/xfconf.yml

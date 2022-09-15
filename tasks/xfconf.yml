@@ -1,31 +1,34 @@
-- name: Configure click_to_focus
-  xfconf:
-    channel: xfwm4
-    property: /general/click_to_focus
-    value_type: 'bool'
-    value: 'false'
-    
-    
-- name: Configure Numix theme
-  xfconf:
-    channel: xfwm4
-    property: /general/theme
-    value_type: 'string'
-    value: 'Numix'
-    
-- name: Set workspace count
-  xfconf:
-    channel: xfwm4
-    property: /general/workspace_count
-    value_type: 'int'
-    value: '5'
+- tasks:
+  become_user: mclay
+
+  - name: Configure click_to_focus
+    xfconf:
+      channel: xfwm4
+      property: /general/click_to_focus
+      value_type: 'bool'
+      value: 'false'
+      
+      
+  - name: Configure Numix theme
+    xfconf:
+      channel: xfwm4
+      property: /general/theme
+      value_type: 'string'
+      value: 'Numix'
+      
+  - name: Set workspace count
+    xfconf:
+      channel: xfwm4
+      property: /general/workspace_count
+      value_type: 'int'
+      value: '5'
 
 
-- name: Configure Remove icons from desktop
-  xfconf:
-    channel: xfce4-desktop
-    property: /desktop-icons/style
-    value_type: 'int'
-    value: '0'
+  - name: Configure Remove icons from desktop
+    xfconf:
+      channel: xfce4-desktop
+      property: /desktop-icons/style
+      value_type: 'int'
+      value: '0'
     
     
