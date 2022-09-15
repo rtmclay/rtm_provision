@@ -111,6 +111,9 @@ minimal_pkg_install ()
   apt install -y ansible git openssh-server seahorse
 }
 
+
+
+
 cleanup ()
 {
   rm ~mclay/pkg.tar.gz
