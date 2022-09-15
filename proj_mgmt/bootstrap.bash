@@ -93,8 +93,11 @@ install_ssh_keys ()
 {
   cd ~mclay/t
 
+  mkdir -p ~mclay/.ssh
+  chmod 700 ~mclay/.ssh
   cp pkg/ssh/mclay/* ~mclay/.ssh
   chown -R mclay: ~mclay/.ssh
+
   mkdir -p ~root/.ssh
   chmod 700 ~root/.ssh
 
