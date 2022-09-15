@@ -1,7 +1,7 @@
 - name: Run xconf setup
   become: true
   become_user: mclay
-  tasks:
+  - tasks:
     - name: Configure click to focus
       xfconf:
         channel: xfwm4
