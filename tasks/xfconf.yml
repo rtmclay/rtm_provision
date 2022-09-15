@@ -22,6 +22,7 @@
 
 
 - name: Configure Remove icons from desktop
+  become: true
   become_user: mclay
   xfconf:
     channel: xfce4-desktop
