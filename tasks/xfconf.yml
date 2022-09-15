@@ -1,3 +1,4 @@
+---
 - name: Run xconf setup
   hosts: localhost
   become: true
