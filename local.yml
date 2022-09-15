@@ -10,6 +10,5 @@
 
   tasks:
     - include: tasks/packages.yml
-
-  tasks:
     - include: tasks/xfconf.yml
+
