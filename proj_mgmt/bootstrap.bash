@@ -182,6 +182,15 @@ git_clone_update_repos ()
   done
 }
 
+root_git_repos_update ()
+(
+  sudo su -
+  echo USER: $USER
+  logout
+  echo USER: $USER
+)
+
+
 install_lua54 ()
 {
   cd ~
@@ -203,6 +212,7 @@ install_luatools ()
 .2
 EOF
     sudo mv .version /opt/apps/luatools
+    sudo chown root: /opt/apps/luatools/.version
   fi
   cd ~
 }
@@ -212,6 +222,7 @@ cmdA=("install_ssh_keys"
       "cleanup"
       "root_ansible_update"
       "mclay_ansible_update"
+      "root_git_repos_update"
       "git_clone_update_repos"
       "install_lua54"
       "install_luatools"
