@@ -1,0 +1,14 @@
+- name: .up repo
+  become_user: mclay
+  git:
+    repo: git@bitbucket.com:rtmclay/rtm_up.git
+    dest: .up
+    
+- name: usefulTools repo
+  become_user: mclay
+  git:
+    repo:  git@riverton.ddns.net:usefulTools
+    dest:  w/usefulTools
+    
+    
+    
