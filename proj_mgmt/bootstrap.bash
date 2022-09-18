@@ -119,7 +119,7 @@ minimal_pkg_install ()
 
 cleanup ()
 {
-  rm ~mclay/pkg.tar.gz
+  rm -f ~mclay/pkg.tar.gz
 }
 
 root_ansible_update ()
@@ -141,9 +141,10 @@ pull_update_repo ()
   dir=${pair%:*}
   branch=${pair#*:}
   cd ~
+  
   if [ ! -d ~/$dir ]; then
     echo git clone git@$service:${account}$repo $dir
-    git clone git@bitbucket.com:${account}$repo $dir
+         git clone git@$service:${account}$repo $dir
   fi
   echo "cd $dir; git pull origin $branch"
   cd $dir; git pull origin $branch
