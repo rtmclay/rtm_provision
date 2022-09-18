@@ -70,9 +70,11 @@ runMe()
   bannerMsg "Build time for all: $(my_seconds2time $rt)"
 }
 
-if [ ! -f ~mclay/pkg.tar.gz ]; then
-  echo "need pkg.tar.gz file"
-  exit 1
+if [ ! -f ~mclay/.ssh/authorized_keys ]; then
+   if [ ! -f ~mclay/pkg.tar.gz ]; then
+     echo "need pkg.tar.gz file"
+     exit 1
+   fi 
 fi
 
 if [ -f ~mclay/pkg.tar.gz ]; then
