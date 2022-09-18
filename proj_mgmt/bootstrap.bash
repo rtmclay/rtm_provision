@@ -214,6 +214,7 @@ cmdA=("install_ssh_keys"
       "mclay_ansible_update"
       "git_clone_update_repos"
       "install_lua54"
+      "install_luatools"
       )
 
 runMe "${cmdA[@]}"
