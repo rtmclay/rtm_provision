@@ -122,12 +122,12 @@ cleanup ()
 
 root_ansible_update ()
 {
-  sudo ansible-pull -U https://bitbucket.com:rtmclay/rtm_provision.git root.yml
+  sudo ansible-pull -U https://bitbucket.com/rtmclay/rtm_provision.git root.yml
 }
 
 mclay_ansible_update ()
 {
-  ansible-pull -U https://bitbucket.com:rtmclay/rtm_provision.git mclay.yml
+  ansible-pull -U https://bitbucket.com/rtmclay/rtm_provision.git mclay.yml
 }
 
 cmdA=("install_ssh_keys"
