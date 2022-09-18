@@ -172,6 +172,7 @@ git_clone_update_repos ()
     "hermes:w/hermes:master"
     "themis:w/themis:master"
     "lua54:w/lua54:master"
+    "luatools:w/luatools:master"
     "usefulTools:w/usefulTools:master"
     "cfdtools:w/dao/cfdtools:master"
     )
@@ -183,9 +184,25 @@ git_clone_update_repos ()
 
 install_lua54 ()
 {
+  cd ~
   if [ ! -f /opt/apps/lua/lua/bin/lua ]; then
      cd w/lua54;
     ./build.rtm
+  fi
+  cd ~
+}
+
+install_luatools ()
+{
+  cd ~
+  if [ ! -d /opt/apps/luatools ]; then
+    PATH=/opt/apps/lua/lua/bin:$PATH
+     cd w/luatools;
+    ./build.rtm
+    cat > .version <<EOF
+.2
+EOF
+    sudo mv .version /opt/apps/luatools
   fi
   cd ~
 }
