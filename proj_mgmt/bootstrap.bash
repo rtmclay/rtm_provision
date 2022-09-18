@@ -184,8 +184,12 @@ git_clone_update_repos ()
 
 root_git_repos_update ()
 (
-  sudo echo USER: '$USER'
-  echo USER: $USER
+  BB=(
+    "rtm_up:.up:master"
+    )
+  for i in "${BB[@]}"; do
+    sudo pull_update_repo bitbucket.com "rtmclay/" $i
+  done
 )
 
 
