@@ -132,7 +132,25 @@ mclay_ansible_update ()
   ansible-pull -U https://bitbucket.com/rtmclay/rtm_provision.git mclay.yml
 }
 
-git_up_repo ()
+pull_update_repo ()
+{
+  service=$1
+  account=$2
+  repo=${3%%:*}
+  pair=${3#*:}
+  dir=${pair%:*}
+  branch=${pair#*:}
+  cd ~
+  if [ ! -d ~/$dir ]; then
+    echo git clone git@$service:${account}$repo $dir
+    git clone git@bitbucket.com:${account}$repo $dir
+  fi
+  echo "cd $dir; git pull origin $branch"
+  cd $dir; git pull origin $branch
+}
+
+
+git_clone_update_repos ()
 {
   BB=(
     "rtm_up:.up:master"
@@ -142,17 +160,22 @@ git_up_repo ()
   mkdir -p ~/w/dao
 
   for i in "${BB[@]}"; do
-     repo=${i%%:*}
-     pair=${i#*:}
-     dir=${pair%:*}
-     branch=${pair#*:}
-     cd ~
-     if [ ! -d ~/$dir ]; then
-       echo git clone git@bitbucket.com:rtmclay/$repo $dir
-            git clone git@bitbucket.com:rtmclay/$repo $dir
-     fi
-     echo "cd $dir; git pull origin $branch"
-           cd $dir; git pull origin $branch
+    pull_update_repo bitbucket.com "rtmclay/" $i
+  done
+
+  RR=(
+    "g:g:master"
+    "shell_startup:w/shell_startup_debug:master"
+    "genkey:w/genkey:master"
+    "hermes:w/hermes:master"
+    "themis:w/themis:master"
+    "lua54:w/lua54:master"
+    "usefulTools:w/usefulTools:master"
+    "cfdtools:w/dao/cfdtools:master"
+    )
+
+  for i in "${RR[@]}"; do
+    pull_update_repo riverton.ddns.net "" $i
   done
 }
 
@@ -162,7 +185,7 @@ cmdA=("install_ssh_keys"
       "cleanup"
       "root_ansible_update"
       "mclay_ansible_update"
-      "git_up_repo"
+      "git_clone_update_repos"
       )
 
 runMe "${cmdA[@]}"
