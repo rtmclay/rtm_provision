@@ -184,7 +184,7 @@ git_clone_update_repos ()
 
 root_git_repos_update ()
 (
-  sudo echo USER: $USER
+  sudo echo USER: '$USER'
   echo USER: $USER
 )
 
