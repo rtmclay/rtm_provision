@@ -1,0 +1,8 @@
+- hosts: localhost
+  connection: local
+  become: true
+  become_user: mclay
+
+  tasks:
+    - include: tasks/mclay/xfconf.yml
+

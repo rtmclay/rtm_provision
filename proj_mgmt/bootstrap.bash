@@ -75,53 +75,66 @@ if [ ! -f ~mclay/pkg.tar.gz ]; then
   exit 1
 fi
 
-echo "unpack pkg.tar.gz"
+if [ -f ~mclay/pkg.tar.gz ]; then
+   echo "unpack pkg.tar.gz"
 
-mkdir -p ~mclay/bin
-mkdir -p ~mclay/t
+   mkdir -p ~mclay/bin
+   mkdir -p ~mclay/t
 
 
-cd ~mclay/t
-tar xf ~mclay/pkg.tar.gz
+   cd ~mclay/t
+   tar xf ~mclay/pkg.tar.gz
 
-cp pkg/bin/my_* ~mclay/bin
-chown -R mclay: ~mclay/bin ~mclay/t 
+   cp pkg/bin/my_* ~mclay/bin
+   chown -R mclay: ~mclay/bin ~mclay/t 
+fi
 
 PATH=~mclay/bin:$PATH
 
 install_ssh_keys ()
 {
-  cd ~mclay/t
+  if [ -d ~mclay/t/pkg ]; then
+     cd ~mclay/t
 
-  mkdir -p ~mclay/.ssh
-  chmod 700 ~mclay/.ssh
-  cp pkg/ssh/mclay/* ~mclay/.ssh
-  chown -R mclay: ~mclay/.ssh
+     mkdir -p ~mclay/.ssh
+     chmod 700 ~mclay/.ssh
+     cp pkg/ssh/mclay/* ~mclay/.ssh
+     chown -R mclay: ~mclay/.ssh
 
-  mkdir -p ~root/.ssh
-  chmod 700 ~root/.ssh
+     sudo mkdir -p ~root/.ssh
+     sudo chmod 700 ~root/.ssh
 
-  cp pkg/ssh/root/* ~root/.ssh
-  rm -rf ~mclay/t/pkg
+     sudo cp pkg/ssh/root/* ~root/.ssh
+     rm -rf ~mclay/t/pkg
+  fi
 }
 
 minimal_pkg_install ()
 {
-  apt update
-  apt install -y ansible git openssh-server seahorse
+  sudo apt update
+  sudo apt install -y ansible git openssh-server seahorse
 }
-
-
-
 
 cleanup ()
 {
   rm ~mclay/pkg.tar.gz
 }
-  
+
+root_ansible_update ()
+{
+  sudo ansible-pull -U https://bitbucket.com:rtmclay/rtm_provision.git root.yml
+}
+
+mclay_ansible_update ()
+{
+  ansible-pull -U https://bitbucket.com:rtmclay/rtm_provision.git mclay.yml
+}
+
 cmdA=("install_ssh_keys"
       "minimal_pkg_install"
       "cleanup"
+      "root_ansible_update"
+      "mclay_ansible_update"
       )
 
 runMe "${cmdA[@]}"

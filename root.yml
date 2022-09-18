@@ -9,6 +9,5 @@
       changed_when: False
 
   tasks:
-    - include: tasks/packages.yml
-    - include: tasks/xfconf.yml
+    - include: tasks/root/packages.yml
 
