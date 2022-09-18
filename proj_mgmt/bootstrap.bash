@@ -143,11 +143,12 @@ pull_update_repo ()
   cd ~
   
   if [ ! -d ~/$dir ]; then
-    echo git clone git@$service:${account}$repo $dir
-         git clone git@$service:${account}$repo $dir
+    echo "git clone git@$service:${account}$repo $dir"
+          git clone git@$service:${account}$repo $dir
   fi
   echo "cd $dir; git pull origin $branch"
-  cd $dir; git pull origin $branch
+        cd $dir; git pull origin $branch
+  cd ~
 }
 
 
@@ -180,6 +181,14 @@ git_clone_update_repos ()
   done
 }
 
+install_lua54 ()
+{
+  if [ ! -f /opt/apps/lua/lua/bin/lua ]; then
+     cd w/lua54;
+    ./build.rtm
+  fi
+  cd ~
+}
 
 cmdA=("install_ssh_keys"
       "minimal_pkg_install"
@@ -187,6 +196,7 @@ cmdA=("install_ssh_keys"
       "root_ansible_update"
       "mclay_ansible_update"
       "git_clone_update_repos"
+      "install_lua54"
       )
 
 runMe "${cmdA[@]}"
