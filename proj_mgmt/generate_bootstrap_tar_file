@@ -1,18 +1,17 @@
 #!/bin/bash
 # -*- shell-script -*-
-TMP_DIR=$HOME/w/rtm_provision/proj_mgmt
+PROJ_MGMT=$HOME/w/rtm_provision/proj_mgmt
 
-rm -rf $TMP_DIR/pkg
-mkdir -p $TMP_DIR/pkg/ssh/{mclay,root}
+rm -rf $PROJ_MGMT/pkg
+mkdir -p $PROJ_MGMT/pkg/ssh/{mclay,root}
 
 echo "copy mclay's ssh files"
-cp ~/.ssh/{authorized_keys,id_rsa,id_rsa.pub} $TMP_DIR/pkg/ssh/mclay
+cp ~/.ssh/{authorized_keys,id_*} $PROJ_MGMT/pkg/ssh/mclay
 
 echo "copy root's ssh files"
-scp root@localhost:.ssh/{authorized_keys,id_rsa,id_rsa.pub} $TMP_DIR/pkg/ssh/root > /dev/null
+scp root@localhost:.ssh/{authorized_keys,id_*} $PROJ_MGMT/pkg/ssh/root > /dev/null
 
-mkdir -p $TMP_DIR/pkg/bin
-cp my_epoch my_seconds2time $TMP_DIR/pkg/bin
+mkdir -p $PROJ_MGMT/pkg/bin
+cp $PROJ_MGMT/{my_epoch,my_seconds2time} $PROJ_MGMT/pkg/bin
 
-
-(cd $TMP_DIR; tar czf pkg.tar.gz pkg; rm -rf pkg)
+(cd $PROJ_MGMT; tar czf pkg.tar.gz pkg; rm -rf pkg)
