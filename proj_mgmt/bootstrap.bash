@@ -134,11 +134,26 @@ mclay_ansible_update ()
 
 git_up_repo ()
 {
-  cd ~
-  if [ ! -d ~/.up ]; then
-    git clone git@bitbucket.com:rtmclay/rtm_up .up
-  fi
-  cd .up; git pull origin master
+  BB=(
+    "rtm_up:.up:master"
+    "lmod:w/lmod:master"
+    "xalt:w/xalt:master"
+    )
+  mkdir -p ~/w/dao
+
+  for i in "${BB[@]}"; do
+     repo=${i%%:*}
+     pair=${i#*:}
+     dir=${pair%:*}
+     branch=${pair#*:}
+     cd ~
+     if [ ! -d ~/$dir ]; then
+       echo git clone git@bitbucket.com:rtmclay/$repo $dir
+            git clone git@bitbucket.com:rtmclay/$repo $dir
+     fi
+     echo "cd $dir; git pull origin $branch"
+           cd $dir; git pull origin $branch
+  done
 }
 
 
