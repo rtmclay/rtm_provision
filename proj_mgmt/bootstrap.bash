@@ -132,11 +132,22 @@ mclay_ansible_update ()
   ansible-pull -U https://bitbucket.com/rtmclay/rtm_provision.git mclay.yml
 }
 
+git_up_repo ()
+{
+  cd ~
+  if [ ! -d ~/.up ]; then
+    git clone git@bitbucket.com:rtmclay/rtm_up .up
+  fi
+  cd .up; git pull origin master
+}
+
+
 cmdA=("install_ssh_keys"
       "minimal_pkg_install"
       "cleanup"
       "root_ansible_update"
       "mclay_ansible_update"
+      "git_up_repo"
       )
 
 runMe "${cmdA[@]}"

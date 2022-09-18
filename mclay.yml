@@ -5,5 +5,4 @@
 
   tasks:
     - include: tasks/mclay/xfconf.yml
-    - include: tasks/mclay/repos.yml
 
