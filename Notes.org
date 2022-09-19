@@ -1,0 +1,18 @@
+Some notes on the steps to provision a Xubuntu system (Starting with a
+VM)
+
+* Step 1: Root 
+** install ssh keys: root, mclay
+** minimal pkg install: git openssh-server seahorse
+* Step 2: Mclay
+** Get ssh keys and agent connected.
+* Step 3: root
+** root ansible-pull update
+** Install git repos:
+    /opt/sysfiles
+    .up
+    w/usefulTools
+    w/dao/cfdtools
+    g
+** Run (cd /opt/sysfiles; ./Install.sh)
+** Run: STARTUP_COLLECTION=$(...) initUP -bz
