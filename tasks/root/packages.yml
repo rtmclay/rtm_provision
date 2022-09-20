@@ -28,5 +28,6 @@
       - tcsh
       - tmux
       - tree
+      - x11-utils
       - zsh
       - zsh-common
