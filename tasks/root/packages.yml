@@ -18,6 +18,7 @@
       - mysql-client
       - mysql-common
       - mysql-server
+      - neofetch
       - ncurses-base
       - ncurses-bin
       - ncurses-term

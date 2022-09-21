@@ -40,5 +40,13 @@
     value_type: 'bool'
     value: 'false'
     
+- name: disable lock screen
+  become_user: mclay
+  xfconf:
+    channel: xfce4-screensaver
+    property: /lock/enabled
+    value_type: 'bool'
+    value: 'false'
+    
 
     
