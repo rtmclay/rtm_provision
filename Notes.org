@@ -1,10 +1,26 @@
 Some notes on the steps to provision a VM Xubuntu system 
 VM)
 
-* Step 0
+* Step 0: Initial setup
 ** Clone test_vmijo
 ** Install openssh-server, curl on VM
 ** Add ssh port (30XX) to VM
+* Step 1: run ./init_bootstrap
+** On mijo:
+*** cd proj_mgmt
+*** ./generate_bootstrap_tar_file
+*** scp -P 30XX pkg.tar.gz init_bootstrap.sh mclay@lh:
+** On VM as mclay
+*** ./init_bootstrap.sh
+*** register ssh keys with VM thru seahorse with:
+    ssh 192.168.13.10
+* Step 2: Root Setup
+** ssh to root on VM
+** Run root_bootstrap.sh
+* Step 3: RTM Setup
+** cd ~mclay
+** ./rtm_setup
+
 * Step 1: Root 
 ** install ssh keys: root, mclay
 ** minimal pkg install: git openssh-server seahorse

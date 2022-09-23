@@ -11,10 +11,12 @@ cp ~/.ssh/{authorized_keys,id_*} $PROJ_MGMT/pkg/ssh/mclay
 echo "copy root's ssh files"
 scp root@localhost:.ssh/{authorized_keys,id_*} $PROJ_MGMT/pkg/ssh/root > /dev/null
 
+echo "copy my_epoch, my_seconds2time"
 mkdir -p $PROJ_MGMT/pkg/bin
 cp $PROJ_MGMT/bin/{my_epoch,my_seconds2time} $PROJ_MGMT/pkg/bin
 
-mkdir -p $PROJ_MGMT/pkg/helper
-cp $PROJ_MGMT/helper/script_helper_routines.sh $PROJ_MGMT/pkg/helper
+echo "copy over scripts"
+mkdir -p $PROJ_MGMT/pkg/scripts
+cp $PROJ_MGMT/helper/script_helper_routines.sh $PROJ_MGMT/{root_bootstrap.sh,rtm_setup.sh} $PROJ_MGMT/pkg/scripts
 
 (cd $PROJ_MGMT; tar czf pkg.tar.gz pkg; rm -rf pkg)
