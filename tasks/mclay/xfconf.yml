@@ -48,13 +48,45 @@
     value_type: 'bool'
     value: 'false'
 
-- name: set beach background s1
+- name: set beach background screen0:workspace0
   become_user: mclay
   xfconf:
     channel: xfce4-desktop
     property: /backdrop/screen0/monitorVirtual1/workspace0/last-image
     value_type: 'string'
     value: '/home/mclay/.up/backgrounds/Beach_by_Renato_Giordanelli.jpg'
+
+- name: set Cairn background screen0:workspace1
+  become_user: mclay
+  xfconf:
+    channel: xfce4-desktop
+    property: /backdrop/screen0/monitorVirtual1/workspace1/last-image
+    value_type: 'string'
+    value: '/home/mclay/.up/backgrounds/Cairn_by_Sylvain_Naudin.jpg'
+
+- name: set Winter Mountains background screen0:workspace2
+  become_user: mclay
+  xfconf:
+    channel: xfce4-desktop
+    property: /backdrop/screen0/monitorVirtual1/workspace2/last-image
+    value_type: 'string'
+    value: '/home/mclay/.up/backgrounds/Mountains_by_JamesPickles.jpg'
+    
+- name: set Icy Stones background screen0:workspace3
+  become_user: mclay
+  xfconf:
+    channel: xfce4-desktop
+    property: /backdrop/screen0/monitorVirtual1/workspace3/last-image
+    value_type: 'string'
+    value: '/home/mclay/.up/backgrounds/Icystones2.jpg'
+    
+- name: set Power of Words background screen0:workspace4
+  become_user: mclay
+  xfconf:
+    channel: xfce4-desktop
+    property: /backdrop/screen0/monitorVirtual1/workspace4/last-image
+    value_type: 'string'
+    value: '/home/mclay/.up/backgrounds/Power_of_Words_by_Antonio_Litterio.jpg'
     
 
     
