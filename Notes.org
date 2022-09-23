@@ -1,6 +1,10 @@
-Some notes on the steps to provision a Xubuntu system (Starting with a
+Some notes on the steps to provision a VM Xubuntu system 
 VM)
 
+* Step 0
+** Clone test_vmijo
+** Install openssh-server, curl on VM
+** Add ssh port (30XX) to VM
 * Step 1: Root 
 ** install ssh keys: root, mclay
 ** minimal pkg install: git openssh-server seahorse

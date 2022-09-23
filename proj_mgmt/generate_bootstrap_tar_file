@@ -12,6 +12,9 @@ echo "copy root's ssh files"
 scp root@localhost:.ssh/{authorized_keys,id_*} $PROJ_MGMT/pkg/ssh/root > /dev/null
 
 mkdir -p $PROJ_MGMT/pkg/bin
-cp $PROJ_MGMT/{my_epoch,my_seconds2time} $PROJ_MGMT/pkg/bin
+cp $PROJ_MGMT/bin/{my_epoch,my_seconds2time} $PROJ_MGMT/pkg/bin
+
+mkdir -p $PROJ_MGMT/pkg/helper
+cp $PROJ_MGMT/helper/script_helper_routines.sh $PROJ_MGMT/pkg/helper
 
 (cd $PROJ_MGMT; tar czf pkg.tar.gz pkg; rm -rf pkg)
