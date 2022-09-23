@@ -47,6 +47,14 @@
     property: /lock/enabled
     value_type: 'bool'
     value: 'false'
+
+- name: set beach background s1
+  become_user: mclay
+  xfconf:
+    channel: xfce4-desktop
+    property: /backdrop/screen0/monitorVirtual1/workspace0/last-image
+    value_type: 'string'
+    value: '/home/mclay/.up/backgrounds/Beach_by_Renato_Giordanelli.jpg'
     
 
     
