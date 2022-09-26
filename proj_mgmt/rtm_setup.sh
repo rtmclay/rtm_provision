@@ -44,17 +44,17 @@ mclay_ansible_update ()
 
 cli_xfconf_foo ()
 { 
- xfconf-query -c xfce4-keyboard-shortcuts      -p '/xfwm4/custom/<Primary><Alt>Left' > /dev/null 2>&1
+ xfconf-query -c      xfce4-keyboard-shortcuts -p '/xfwm4/custom/<Primary><Alt>Left' > /dev/null 2>&1
  if [ "$?" ]; then
    xfconf-query -r -c xfce4-keyboard-shortcuts -p '/xfwm4/custom/<Primary><Alt>Left' 
  fi
- xfconf-query -c xfce4-keyboard-shortcuts      -p '/xfwm4/custom/<Primary>Left' -t 'string' -s 'left_workspace_key'
+ xfconf-query -n -c   xfce4-keyboard-shortcuts -p '/xfwm4/custom/<Primary>Left' -t 'string' -s 'left_workspace_key'
 
- xfconf-query -c xfce4-keyboard-shortcuts      -p '/xfwm4/custom/<Primary><Alt>Right' > /dev/null 2>&1
+ xfconf-query -c      xfce4-keyboard-shortcuts -p '/xfwm4/custom/<Primary><Alt>Right' > /dev/null 2>&1
  if [ "$?" ]; then
    xfconf-query -r -c xfce4-keyboard-shortcuts -p '/xfwm4/custom/<Primary><Alt>Right' > /dev/null 2>&1
  fi
- xfconf-query -c xfce4-keyboard-shortcuts      -p '/xfwm4/custom/<Primary>Right' -t 'string' -s 'right_workspace_key'
+ xfconf-query -n -c   xfce4-keyboard-shortcuts -p '/xfwm4/custom/<Primary>Right' -t 'string' -s 'right_workspace_key'
 }
 
 rtm_up_install ()
