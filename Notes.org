@@ -21,6 +21,18 @@ VM)
 ** cd ~mclay
 ** ./rtm_setup
 
+
+Notes on how to set up roles:
+
+All Hosts get basics
+VM's get   VM tasks
+workstation get Wkst task (bt, jedrik, rios, mb, nuc)
+home: bt, jedrik, mb, nuc
+work: rios
+
+
+
+
 * Step 1: Root 
 ** install ssh keys: root, mclay
 ** minimal pkg install: git openssh-server seahorse
