@@ -88,21 +88,6 @@
     value_type: 'string'
     value: '/home/mclay/.up/backgrounds/Power_of_Words_by_Antonio_Litterio.jpg
 
-- name: Ctrl-left -> Left workspace
-  become_user: mclay
-  xfconf:
-    channel: xfce4-keyboard-shortcuts
-    property: /xfwm4/custom/\<Primary\>Left
-    value_type: 'string'
-    value: "left-workspace-key"
-
-- name: Ctrl-Right -> Right workspace
-  become_user: mclay
-  xfconf:
-    channel: xfce4-keyboard-shortcuts
-    property: "/xfwm4/custom/\<Primary\>Right"
-    value_type: 'string'
-    value: "right-workspace-key"
 
 
 
