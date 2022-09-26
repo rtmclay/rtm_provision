@@ -1,6 +1,7 @@
 - name: Install packages
   apt:
     name:
+      - apt-file
       - cmake
       - emacs
       - enscript
@@ -12,6 +13,9 @@
       - gdb
       - gfortran
       - htop
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libssl-dev
       - m4
       - make
       - meld
@@ -22,6 +26,7 @@
       - ncurses-base
       - ncurses-bin
       - ncurses-term
+      - python3-mysqldb
       - stow
       - tcl
       - tcl-dev
@@ -29,6 +34,7 @@
       - tcsh
       - tmux
       - tree
+      - uuid-dev
       - x11-utils
       - zsh
       - zsh-common
