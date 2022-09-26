@@ -42,6 +42,21 @@ mclay_ansible_update ()
   ansible-pull -U https://github.com/rtmclay/rtm_provision.git mclay.yml
 }
 
+cli_xfconf_foo ()
+{ 
+ xfconf-query -c xfce4-keyboard-shortcuts      -p '/xfwm4/custom/<Primary><Alt>Left' > /dev/null 2>&1
+ if [ "$?" ]; then
+   xfconf-query -r -c xfce4-keyboard-shortcuts -p '/xfwm4/custom/<Primary><Alt>Left' 
+ fi
+ xfconf-query -c xfce4-keyboard-shortcuts      -p '/xfwm4/custom/<Primary>Left' -t 'string' -s 'left_workspace_key'
+
+ xfconf-query -c xfce4-keyboard-shortcuts      -p '/xfwm4/custom/<Primary><Alt>Right' > /dev/null 2>&1
+ if [ "$?" ]; then
+   xfconf-query -r -c xfce4-keyboard-shortcuts -p '/xfwm4/custom/<Primary><Alt>Right' > /dev/null 2>&1
+ fi
+ xfconf-query -c xfce4-keyboard-shortcuts      -p '/xfwm4/custom/<Primary>Right' -t 'string' -s 'right_workspace_key'
+}
+
 rtm_up_install ()
 {
   if [ -d ~/.rc/bash -a -L ~/.zshrc ]; then
@@ -172,6 +187,7 @@ install_lmod ()
 
 cmdA=("git_clone_update_repos"
       "mclay_ansible_update"
+      "cli_xfconf_foo"
       "rtm_up_install"
       "install_lua54"
       "install_luatools"
