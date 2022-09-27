@@ -1,4 +1,4 @@
-Some notes on the steps to provision a VM Xubuntu system 
+Some notes on the steps to provision a VM Xubuntu system  
 VM)
 
 * Step 0: Initial setup
@@ -32,19 +32,8 @@ work: rios
 
 
 
-
-* Step 1: Root 
-** install ssh keys: root, mclay
-** minimal pkg install: git openssh-server seahorse
-* Step 2: Mclay
-** Get ssh keys and agent connected.
-* Step 3: root
-** root ansible-pull update
-** Install git repos:
-    /opt/sysfiles
-    .up
-    w/usefulTools
-    w/dao/cfdtools
-    g
-** Run (cd /opt/sysfiles; ./Install.sh)
-** Run: STARTUP_COLLECTION=$(...) initUP -bz
+* Step 4: Post Automated setup
+** Change shell to /bin/zsh via chsh
+** If using xfce4-terminal edit preference to turn off the terminal from grabbing Alt
+   This is found in the Advanced tab.
+** 

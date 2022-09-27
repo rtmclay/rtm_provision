@@ -26,6 +26,7 @@
       - ncurses-base
       - ncurses-bin
       - ncurses-term
+      - python2
       - python3-mysqldb
       - stow
       - tcl
