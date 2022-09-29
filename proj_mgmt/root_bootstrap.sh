@@ -80,7 +80,7 @@ root_sysfiles_install ()
 setup_xalt_account_in_mysql ()
 {
   cd ~/w/setup_testxalt_mysql
-  ./create_testxalt_db
+  ./create_testxalt_db.py
   cd $WD
 }
 
