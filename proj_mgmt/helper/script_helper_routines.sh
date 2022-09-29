@@ -77,7 +77,7 @@ pull_update_repo ()
   branch=${pair#*:}
   cd ~
   
-  if [ ! -d ~/$dir ]; then
+  if [ ! -d ~/$dir -a ! -d $dir ]; then
     echo "git clone git@$service:${account}$repo $dir"
           git clone git@$service:${account}$repo $dir
   fi
