@@ -4,10 +4,24 @@
 
   pre_tasks:
     - name: update repositories
-      apt:
-        update_cache: yes
+      tags: always
+      apt: update_cache: yes
       changed_when: False
 
   tasks:
     - include: tasks/root/packages.yml
 
+- hosts: all
+  become: true
+  tasks:
+  - name: cleanup package cache (debian and ubuntu)
+    tags: always
+    apt:
+      autoclean: yes
+    changed_when: false
+
+  - name: autoremove orphan packages (debian and ubuntu)
+    tags: always
+    apt:
+      autoremove: yes
+      purge: yes

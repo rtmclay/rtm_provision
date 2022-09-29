@@ -70,7 +70,6 @@ cleanup ()
 cmdA=("install_ssh_keys"
       "minimal_pkg_install"
       "cleanup"
-      "root_ansible_update"
       )
 
 runMe "${cmdA[@]}"

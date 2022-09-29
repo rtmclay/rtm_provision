@@ -3,7 +3,7 @@ VM)
 
 * Step 0: Initial setup
 ** Clone test_vmijo
-** Install openssh-server, curl on VM
+** Install openssh-server, git, ansible
 ** Add ssh port (30XX) to VM
 * Step 1: run ./init_bootstrap
 ** On mijo:
@@ -16,19 +16,13 @@ VM)
     ssh 192.168.13.10
 * Step 2: Root Setup
 ** ssh to root on VM
+    $ ssh -YA root@localhost
 ** Run root_bootstrap.sh
 * Step 3: RTM Setup
 ** cd ~mclay
 ** ./rtm_setup
 
 
-Notes on how to set up roles:
-
-All Hosts get basics
-VM's get   VM tasks
-workstation get Wkst task (bt, jedrik, rios, mb, nuc)
-home: bt, jedrik, mb, nuc
-work: rios
 
 
 
@@ -36,4 +30,17 @@ work: rios
 ** Change shell to /bin/zsh via chsh
 ** If using xfce4-terminal edit preference to turn off the terminal from grabbing Alt
    This is found in the Advanced tab.
-** 
+** Add workspace switcher to top-bar panel
+
+* Step 5: Setup for XALT
+** Create account for xaltTest
+** Grant all privileges
+
+
+* Notes on how to set up roles:
+
+All Hosts get basics
+VM's get   VM tasks
+workstation get Wkst task (bt, jedrik, rios, mb, nuc)
+home: bt, jedrik, mb, nuc
+work: rios
