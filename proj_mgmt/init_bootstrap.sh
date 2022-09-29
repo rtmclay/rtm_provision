@@ -67,9 +67,15 @@ cleanup ()
   rm -f ~mclay/pkg.tar.gz
 }
 
+run_root_bootstrap ()
+{
+  ssh -YA root@localhost ./root_bootstrap.sh
+}
+
 cmdA=("install_ssh_keys"
       "minimal_pkg_install"
       "cleanup"
+      "run_root_bootstrap"
       )
 
 runMe "${cmdA[@]}"
