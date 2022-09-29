@@ -27,6 +27,7 @@ root_git_clone_repos ()
   RR=(
     "g:g:master"
     "usefulTools:w/usefulTools:master"
+    "setup_testxalt_mysql:w/setup_testxalt_mysql:main"
     "cfdtools:w/dao/cfdtools:master"
     "sysfiles:/opt/sysfiles:master"
     "modulefiles:/opt/apps/modulefiles:master"
@@ -76,12 +77,19 @@ root_sysfiles_install ()
   fi
   cd $WD
 }
+setup_xalt_account_in_mysql ()
+{
+  cd ~/w/setup_testxalt_mysql
+  ./create_testxalt_db
+  cd $WD
+}
 
 
 cmdA=("root_ansible_update"
       "root_git_clone_repos"
       "root_up_install"
       "root_sysfiles_install"
+      "setup_xalt_account_in_mysql"
       )
 
 runMe "${cmdA[@]}"
