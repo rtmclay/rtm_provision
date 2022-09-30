@@ -1,0 +1,41 @@
+- name: Install packages
+  apt:
+    name:
+      - apt-file
+      - cmake
+      - emacs
+      - enscript
+      - evince
+      - expect
+      - flex
+      - g++
+      - gawk
+      - gdb
+      - gfortran
+      - htop
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libssl-dev
+      - m4
+      - make
+      - meld
+      - mysql-client
+      - mysql-common
+      - mysql-server
+      - neofetch
+      - ncurses-base
+      - ncurses-bin
+      - ncurses-term
+      - python2
+      - python3-mysqldb
+      - stow
+      - tcl
+      - tcl-dev
+      - tcl-expect
+      - tcsh
+      - tmux
+      - tree
+      - uuid-dev
+      - x11-utils
+      - zsh
+      - zsh-common
