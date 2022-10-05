@@ -16,7 +16,7 @@ root_ansible_update ()
 root_git_clone_repos ()
 {
   BB=(
-    "rtm_up:.up:master"
+    "rtm_up:.up:main"
      )
   for i in "${BB[@]}"; do
     pull_update_repo bitbucket.com "rtmclay/" $i
@@ -25,7 +25,7 @@ root_git_clone_repos ()
   mkdir -p ~/w/dao
 
   RR=(
-    "g:g:master"
+    "g:g:main"
     "usefulTools:w/usefulTools:master"
     "setup_testxalt_mysql:w/setup_testxalt_mysql:main"
     "cfdtools:w/dao/cfdtools:master"

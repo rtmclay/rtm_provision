@@ -9,7 +9,7 @@ PATH=~/bin:$PATH
 git_clone_update_repos ()
 {
   BB=(
-    "rtm_up:.up:master"
+    "rtm_up:.up:main"
     "luatools:w/luatools:master"
     "lmod:w/lmod:master"
     "xalt:w/xalt:master"
@@ -22,7 +22,7 @@ git_clone_update_repos ()
   mkdir -p ~/w/dao
 
   RR=(
-    "g:g:master"
+    "g:g:main"
     "shell_startup:w/shell_startup_debug:master"
     "genkey:w/genkey:master"
     "hermes:w/hermes:master"
