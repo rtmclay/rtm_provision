@@ -27,6 +27,7 @@ git_clone_update_repos ()
     "genkey:w/genkey:main"
     "hermes:w/hermes:master"
     "themis:w/themis:master"
+    "Lmod_test_suite:w/Lmod_test_suite:master"
     "lua54:w/lua54:master"
     "usefulTools:w/usefulTools:master"
     "cfdtools:w/dao/cfdtools:master"
