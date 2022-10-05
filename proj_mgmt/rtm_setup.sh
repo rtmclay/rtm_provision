@@ -23,7 +23,7 @@ git_clone_update_repos ()
 
   RR=(
     "g:g:main"
-    "shell_startup:w/shell_startup_debug:master"
+    "shell_startup:w/shell_startup_debug:main"
     "genkey:w/genkey:master"
     "hermes:w/hermes:master"
     "themis:w/themis:master"
