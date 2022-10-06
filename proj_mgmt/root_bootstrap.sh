@@ -26,9 +26,9 @@ root_git_clone_repos ()
 
   RR=(
     "g:g:main"
-    "usefulTools:w/usefulTools:master"
+    "usefulTools:w/usefulTools:main"
     "setup_testxalt_mysql:w/setup_testxalt_mysql:main"
-    "cfdtools:w/dao/cfdtools:master"
+    "cfdtools:w/dao/cfdtools:main"
     "sysfiles:/opt/sysfiles:master"
     "modulefiles:/opt/apps/modulefiles:master"
     )

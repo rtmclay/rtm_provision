@@ -26,11 +26,11 @@ git_clone_update_repos ()
     "shell_startup:w/shell_startup_debug:main"
     "genkey:w/genkey:main"
     "hermes:w/hermes:master"
-    "themis:w/themis:master"
+    "themis:w/themis:main"
     "Lmod_test_suite:w/Lmod_test_suite:master"
     "lua54:w/lua54:master"
-    "usefulTools:w/usefulTools:master"
-    "cfdtools:w/dao/cfdtools:master"
+    "usefulTools:w/usefulTools:main"
+    "cfdtools:w/dao/cfdtools:main"
     )
 
   for i in "${RR[@]}"; do
