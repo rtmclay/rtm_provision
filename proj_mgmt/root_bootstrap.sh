@@ -29,7 +29,7 @@ root_git_clone_repos ()
     "usefulTools:w/usefulTools:main"
     "setup_testxalt_mysql:w/setup_testxalt_mysql:main"
     "cfdtools:w/dao/cfdtools:main"
-    "sysfiles:/opt/sysfiles:master"
+    "sysfiles:/opt/sysfiles:main"
     "modulefiles:/opt/apps/modulefiles:master"
     )
 
