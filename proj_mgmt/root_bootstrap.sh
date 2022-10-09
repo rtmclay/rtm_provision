@@ -10,7 +10,8 @@ PATH=~root/bin:$PATH
 
 root_ansible_update ()
 {
-  sudo ansible-pull -U https://github.com/rtmclay/rtm_provision.git root.yml
+  #sudo ansible-pull -U https://github.com/rtmclay/rtm_provision.git --ssh-common-args '-o ForwardAgent=yes' root.yml
+   sudo ansible-pull -U git@riverton.ddns.net:rtmclay/rtm_provision.git --ssh-common-args '-o ForwardAgent=yes' root.yml
 }
 
 root_git_clone_repos ()
