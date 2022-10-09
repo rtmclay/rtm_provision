@@ -10,9 +10,9 @@ git_clone_update_repos ()
 {
   BB=(
     "rtm_up:.up:main"
-    "luatools:w/luatools:master"
-    "lmod:w/lmod:master"
-    "xalt:w/xalt:master"
+    "luatools:w/luatools:main"
+    "lmod:w/lmod:main"
+    "xalt:w/xalt:main"
     )
 
   for i in "${BB[@]}"; do
@@ -25,10 +25,10 @@ git_clone_update_repos ()
     "g:g:main"
     "shell_startup:w/shell_startup_debug:main"
     "genkey:w/genkey:main"
-    "hermes:w/hermes:master"
+    "hermes:w/hermes:main"
     "themis:w/themis:main"
-    "Lmod_test_suite:w/Lmod_test_suite:master"
-    "lua54:w/lua54:master"
+    "Lmod_test_suite:w/Lmod_test_suite:main"
+    "lua54:w/lua54:main"
     "usefulTools:w/usefulTools:main"
     "cfdtools:w/dao/cfdtools:main"
     )
@@ -169,9 +169,6 @@ install_lmod ()
     return
   fi
   cd ~/w/lmod
-  if [ -d master ]; then
-    cd master
-  fi
   if [ -d main ]; then
     cd main
   fi

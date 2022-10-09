@@ -17,6 +17,7 @@ root_git_clone_repos ()
 {
   BB=(
     "rtm_up:.up:main"
+    "luatools:w/luatools:main"
      )
   for i in "${BB[@]}"; do
     pull_update_repo bitbucket.com "rtmclay/" $i
@@ -30,7 +31,7 @@ root_git_clone_repos ()
     "setup_testxalt_mysql:w/setup_testxalt_mysql:main"
     "cfdtools:w/dao/cfdtools:main"
     "sysfiles:/opt/sysfiles:main"
-    "modulefiles:/opt/apps/modulefiles:master"
+    "modulefiles:/opt/apps/modulefiles:main"
     )
 
   for i in "${RR[@]}"; do
