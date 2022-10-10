@@ -9,11 +9,10 @@
          update_cache: yes
       changed_when: False
 
-# run roles
 - hosts: localhost
   tags: base
   become: true
-  - import_tasks: tasks/root/packages.yml
+  - include tasks/root/packages.yml
 
 - hosts: localhost
   become: true
