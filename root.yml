@@ -9,10 +9,8 @@
          update_cache: yes
       changed_when: False
 
-- hosts: localhost
-  tags: base
-  become: true
-  - include_task tasks/root/packages.yml
+  - include_task: tasks/root/packages.yml
+
 
 - hosts: localhost
   become: true
