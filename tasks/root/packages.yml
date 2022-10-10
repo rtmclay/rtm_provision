@@ -22,10 +22,11 @@
       - mysql-client
       - mysql-common
       - mysql-server
-      - neofetch
       - ncurses-base
       - ncurses-bin
       - ncurses-term
+      - neofetch
+      - net-tools
       - python2
       - python3-mysqldb
       - stow
@@ -39,3 +40,8 @@
       - x11-utils
       - zsh
       - zsh-common
+- name: clone sysfiles
+  ansible.builtin.git:
+    repo: git@riverton.ddns.net:sysfiles
+    dest: /root/w/sysfiles
+    update: yes
