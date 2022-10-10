@@ -13,8 +13,7 @@
 - hosts: all
   tags: base
   become: true
-  roles:
-    - base
+  - import_tasks: tasks/root/packages.yml
 
 - hosts: all
   become: true
