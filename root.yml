@@ -12,7 +12,8 @@
 - hosts: localhost
   tags: base
   become: true
-  include tasks/root/packages.yml
+  - name include root tasks
+    include_task tasks/root/packages.yml
 
 - hosts: localhost
   become: true
