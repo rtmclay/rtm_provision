@@ -10,12 +10,12 @@
       changed_when: False
 
 # run roles
-- hosts: all
+- hosts: localhost
   tags: base
   become: true
   - import_tasks: tasks/root/packages.yml
 
-- hosts: all
+- hosts: localhost
   become: true
   tasks:
   - name: cleanup package cache (debian and ubuntu)
