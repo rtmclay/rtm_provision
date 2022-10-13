@@ -46,3 +46,6 @@
     repo: git@riverton.ddns.net:sysfiles
     dest: /root/w/sysfiles
     update: yes
+    become: true
+    become_user: root
+    
