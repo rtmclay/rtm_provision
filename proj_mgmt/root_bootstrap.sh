@@ -10,7 +10,8 @@ PATH=~root/bin:$PATH
 
 root_ansible_update ()
 {
-  sudo ansible-pull -U https://github.com/rtmclay/rtm_provision.git root.yml
+  myHost=$(uname -n)
+  sudo ansible-pull -i ${myHost}, -U https://github.com/rtmclay/rtm_provision.git root.yml
 }
 
 root_git_clone_repos ()
