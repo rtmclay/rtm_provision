@@ -47,5 +47,4 @@
     dest: /root/w/sysfiles
     update: yes
     become: true
-    become_user: {{ user }}
     
