@@ -45,6 +45,5 @@
   ansible.builtin.git:
     repo: git@riverton.ddns.net:sysfiles
     dest: /root/w/sysfiles
-    key_file: '/root/.ssh/id_rsa'
     update: yes
   become : yes
