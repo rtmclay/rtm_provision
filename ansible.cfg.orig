@@ -1,5 +1,0 @@
-[defaults]
-inventory = hosts.inventory
-
-[ssh_connection]
-ssh_args = -o forwardAgent=yes
