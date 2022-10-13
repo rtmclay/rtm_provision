@@ -46,6 +46,5 @@
     repo: git@riverton.ddns.net:sysfiles
     dest: /root/w/sysfiles
     update: yes
-  become : yes
-  become_user : '{{ user }}'
+  become : no
   
