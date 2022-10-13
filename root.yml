@@ -9,7 +9,8 @@
          update_cache: yes
       changed_when: False
 
-  - include_task: tasks/root/packages.yml
+  tasks:
+    - include: tasks/root/packages.yml
 
 
 - hosts: localhost
