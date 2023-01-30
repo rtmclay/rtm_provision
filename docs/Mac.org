@@ -1,0 +1,58 @@
+Notes on how to work on un-initialized mac.
+
+* Initial login to mac
+* System Preferences 
+** Keyboard* Fix keyboard 
+*** Modifier Keys 
+    Make the cap lock key a control key
+    Turn off "Natural Scrolling"
+*** Text -> Turn off 
+    Correct spelling automatically
+    Auto Capitalize
+    Add period with double-space
+    Use smart quotes
+*** Shortcuts -> Mission Control
+    Mission Control turn on Switch to Desktop 1 to 7
+*** Shortcuts -> Screenshots
+    Turn them all off
+*** Spotlight
+    Turn them all off
+** Trackpad
+   Turn off Scroll Direction.
+** General
+   Turn on Dark mode
+** Dock
+   Turn on Magnification
+** Mission Control
+   Turn off Automatically rearrange Spaces to most recent use.
+   Make left corner lock screen
+** Users
+   Turn off Guest account
+** Display
+   Scaled -> More Space.
+*** Night Shift
+   Sunset to Sunrise.
+** Date & Time
+   Show date and time in menu bar
+   Show AM/PM
+   Show day of the week
+   Show date
+** Sharing
+*** Remote login -> On
+    Turn on access for me
+** Setup Printing for
+*** Xerox
+*** Color HP printer in mail room
+*** HP Color printer at home.
+** Sound
+Turn on "Show volume in menu bar"
+* change my password
+
+* On working computer (jedrik, rios, etc)  run "generate_bootstrap_tar_file"
+* Copy pkg.tar.gz to mac
+* On mac run mac_bootstrap
+  - install ssh keys
+  - install brew
+  - install ansible
+  - git clone rtm_provision
+  - run ansible playbook on mac locally.
